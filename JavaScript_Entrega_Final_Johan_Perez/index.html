@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Dulce Jardín</title>
+</head>
+<body>
+  <div class="header">
+    <img src="./images/icono.png" alt="Imagen del logo" class="header_logo">
+
+    <ul class="header_nav">
+      <li ><a href="#carrito_compras" class="h2"><img src="./images/shopping-cart.png" alt="Imagen del logo" class="logo_cart"> </a></li>
+    </ul>
+  </div>
+
+  <div id="carouselExampleInterval" class="carousel slide top-carousel altura-carousel mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4000">
+        <img src="./images/colibri.jpg" class="d-block w-100 altura-carousel" alt="imagen colibri">
+      </div>
+      <div class="carousel-caption animate__animated animate__zoomIn rounded">
+        <h3 text-center>Vivero Dulce Jardín</h3>
+        <p text-center>Lo mejor en plantas </p>
+      </div>
+
+
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="./images/flor.jpg" class="d-block w-100 altura-carousel" alt="imagen flor">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="./images/fuente.jpg" class="d-block w-100 altura-carousel" alt="imagen fuente">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="./images/planta1.jpg" class="d-block w-100 altura-carousel" alt="imagen planta">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <div class="container">
+    <h1 class="text-center d-flex justify-content-center animate__animated animate__flipInY">Plantas</h1>
+    <br>
+    <div class="row" id="contenedor-productos"></div>
+  </div>
+
+  <template id="template-productos">
+    <div class="col-12 col-md-4 mb-3">
+        <div class="card Contenedor-productos">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body lh-sm">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title">Cafe</h5>
+                <button class="btn btn-success">Comprar</button>
+              </div>
+              <p class="card-text">$<span>5000</span></p>
+            </div>
+        </div>
+    </div>
+  </template>
+
+  <!--aqui vamos a meter el carrito  -->
+
+  <div class="container" id="carrito_compras">
+    <h1 class="text-center">Carrito</h1>
+    <hr>
+
+    <div class="my-5">
+        <h4 class="text-center">Lista De Productos</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Item</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Acción</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="items"></tbody>
+          <tfoot>
+            <tr id="footer-carrito">
+                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+            </tr>
+          </tfoot>
+        </table>
+    </div>
+  </div>
+
+  <template id="template-footer">
+    <th scope="row" colspan="2">Total productos</th>
+    <td>10</td>
+    <td>
+        <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+            Vaciar
+        </button>
+        <a href="./pages/Finalizar_Compra.html">
+          <button class="btn btn-success btn-sm" id="vaciar-carrito">
+            Comprar
+          </button>
+        </a>
+
+    </td>
+    <td class="font-weight-bold">$ <span> 5000</span> </td>
+  </template>
+
+  <template id="template-carrito">
+    <tr>
+      <th scope="row">id</th>
+      <td>Planta</td>
+      <td>1</td>
+      <td>
+          <button class="btn btn-info btn-sm">
+              +
+          </button>
+          <button class="btn btn-danger btn-sm">
+              -
+          </button>
+      </td>
+      <td>$ <span>500</span></td>
+    </tr>
+  </template>
+
+  <div class="nuestra sin_margen_nuestra">
+    <div class="texto_nuestra">
+        <h1>Nuestra Empresa  </h1>
+        <p> Vivero Dulce Jardin es una empresa dedicada al comercio, diseño y mantenimiento de jardines, abarcando todo tipo de espacios y ambientes, enfocada en satisfacer las necesidades de nuestros clientes.</p>
+    </div>
+
+  </div>
+
+  <div class="gran-footer">
+      <div class="footer">
+          <div>
+              <p class="footer-texto">© 2022 - Derechos reservados </p>
+          </div>
+          
+          <ul class="footer-menu">
+              <li class="footer-menu-item item-whatsapp"><a href="https://www.whatsapp.com/"><img src="../images/whatsapp.svg" alt="Logo de WhatsApp" class="footer-img"></a></li>
+              <li class="footer-menu-item"><a href="https://www.facebook.com/"><img src="../images/facebook.svg" alt="Logo de Facebook" class="footer-img"></a></li>
+              <li class="footer-menu-item"><a href="https://www.instagram.com/"><img src="../images/instagram.svg" alt="Logo de Instagram" class="footer-img"></a></li>
+              <li class="footer-menu-item"><a href="https://twitter.com/"><img src="../images/twitter.svg" alt="Logo de Twitter" class="footer-img"></a></li>
+              <li class="footer-menu-item"><a href="https://web.telegram.org/"><img src="../images/telegram.svg" alt="Logo de Telegram" class="footer-img"></a></li>
+          </ul>
+      </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
